@@ -1,0 +1,33 @@
+{
+  "name": "competitive-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A full-stack competitive programming platform",
+  "scripts": {
+    "dev": "pnpm --parallel --filter './apps/*' run dev",
+    "dev:api": "pnpm --filter @cp/api run dev",
+    "dev:web": "pnpm --filter @cp/web run dev",
+    "dev:judge": "pnpm --filter @cp/judge-worker run dev",
+    "build": "pnpm --filter './apps/*' run build",
+    "lint": "pnpm -r run lint",
+    "typecheck": "pnpm -r run typecheck",
+    "test": "pnpm -r run test",
+    "db:migrate": "pnpm --filter @cp/api run db:migrate",
+    "db:push": "pnpm --filter @cp/api run db:push",
+    "db:seed": "pnpm --filter @cp/api run db:seed",
+    "db:studio": "pnpm --filter @cp/api run db:studio",
+    "db:generate": "pnpm --filter @cp/api run db:generate",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "pnpm -r exec rm -rf node_modules dist .turbo && rm -rf node_modules"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "7.10.0",
+    "dotenv": "^18.0.1",
+    "prisma": "7.10.0"
+  }
+}
